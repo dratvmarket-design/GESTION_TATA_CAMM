@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Produits - GESTION DE VENTE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand-text">
+        <div class="brand-title">GESTION DE VENTE</div>
+        <div class="brand-sub">La sécurité sans limites</div>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="card">
+        <h2>Ajouter un produit</h2>
+        <div class="form-row">
+          <input id="nomProduit" placeholder="Nom du produit">
+        </div>
+        <div class="form-row">
+          <input id="prixProduit" type="number" placeholder="Prix (FCFA)">
+        </div>
+        <div class="form-row">
+          <input id="imageProduitFile" type="file" accept="image/*">
+        </div>
+        <div class="form-row">
+          <button class="btn primary" id="saveBtn">💾 Enregistrer</button>
+        </div>
+        <div class="form-row">
+          <button class="btn danger" id="deleteAllBtn">🗑️ Supprimer tous les produits</button>
+        </div>
+        <div class="form-row">
+          <button class="btn export" id="exportPdfBtn">🧾 Exporter en PDF</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Liste des produits</h3>
+        <div id="productList"></div>
+      </section>
+    </main>
+
+    <footer class="footer">GESTION DE VENTE - La sécurité sans limites</footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+:root{
+  --orange:#ff6600;
+  --dark:#1e1e1e;
+  --green:#008037;
+  --white:#ffffff;
+  --muted:#707070;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, var(--orange) 0%, var(--orange) 45%, var(--dark) 45%, var(--dark) 100%);
+  color:#111;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:12px;
+}
+.app{width:100%;max-width:520px}
+.header{
+  background: rgba(255,255,255,0.95);
+  border-radius:12px;
+  padding:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.12);
+  margin-bottom:12px;
+}
+.brand-text{text-align:center}
+.brand-title{color:var(--orange);font-weight:800;font-size:18px}
+.brand-sub{color:var(--green);margin-top:4px;font-weight:600}
+.content{margin-top:6px}
+.card{background:#fff;padding:14px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.08);margin-bottom:12px}
+.center{text-align:center}
+.btn{background:var(--orange);color:#fff;border:none;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+.btn.secondary{background:#eee;color:#111}
+.btn.danger{background:#cc0000;color:#fff}
+.btn.export{background:#009688;color:#fff}
+.form-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.form-row input, .form-row select {flex:1;padding:10px;border-radius:8px;border:1px solid #ddd}
+.footer{text-align:center;color:var(--muted);padding:10px;font-size:13px;margin-top:6px}
+
+/* product list */
+#productList{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.product-card{display:flex;gap:12px;align-items:center;padding:10px;border-radius:10px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+.thumb{width:100px;height:80px;flex:0 0 100px;border-radius:8px;object-fit:cover;background:#eee}
+.info{flex:1}
+.info h4{margin:0 0 6px 0}
+.info p{margin:0}
+
+/* responsive */
+@media(max-width:420px){
+  .thumb{width:90px;height:70px}
+  .brand-title{font-size:16px}
+  .btn{width:100%}
+}
