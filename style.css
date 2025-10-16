@@ -1,0 +1,36 @@
+:root{
+  --orange:#ff8c00;
+  --dark:#1e1e1e;
+  --green:#0e7a6b;
+  --white:#ffffff;
+  --muted:#f6f6f6;
+  --danger:#d32f2f;
+}
+*{box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{margin:0;background:var(--dark);color:#222;min-height:100vh;display:flex;flex-direction:column}
+.header{background:var(--orange);padding:14px;border-bottom-left-radius:18px;border-bottom-right-radius:18px}
+.header-inner{max-width:480px;margin:0 auto;text-align:center;background:transparent;padding:6px;border-radius:8px}
+.header h1{margin:0;color:#fff;font-weight:700}
+.header .slogan{color:#0f8b49;margin:6px 0 10px}
+.header-buttons{display:flex;gap:8px;justify-content:center}
+.btn-outline{background:#fff;border:0;padding:8px 12px;border-radius:6px;color:var(--orange);cursor:pointer}
+main{flex:1;display:flex;justify-content:center;padding:16px}
+.page{max-width:480px;width:100%;display:none}
+.page.active{display:block}
+.card{background:#fff;border-radius:12px;padding:14px;margin-bottom:12px}
+.dashboard{padding:20px;text-align:left}
+.dashboard h2{margin-top:0}
+.stat{display:flex;align-items:center;gap:12px;border-bottom:1px solid #eee;padding:10px 0}
+.stat span{font-size:20px;font-weight:700;color:#111}
+.actions{display:flex;flex-direction:column;gap:8px}
+.btn-primary{background:var(--orange);color:#fff;border:0;padding:12px;border-radius:8px;cursor:pointer}
+.btn-primary.full{width:100%}
+.btn-danger{background:var(--danger);color:#fff;border:0;padding:12px;border-radius:8px;cursor:pointer}
+.btn-green{background:var(--green);color:#fff;border:0;padding:12px;border-radius:8px;cursor:pointer}
+.btn-outline.full{background:transparent;border:2px solid #eee;padding:12px;border-radius:8px;cursor:pointer}
+input[type=text],input[type=number],input[type=tel],textarea,select{width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;margin-bottom:8px}
+.file-row{display:flex;align-items:center;gap:8px}
+.list-card .product-item{display:flex;align-items:center;gap:12px;padding:10px;border-radius:8px;background:#fafafa;margin-bottom:8px}
+.list-card img{width:56px;height:56px;border-radius:6px;object-fit:cover}
+.footer{text-align:center;padding:12px;color:#9a9a9a;font-size:14px}
+@media (max-width:480px){.header-inner{padding:8px}}

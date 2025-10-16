@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GESTION DE VENTE</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- jsPDF (CDN) - if you wrap the site into APK ensure jsPDF is included locally for full offline PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <h1>GESTION DE VENTE</h1>
+      <p class="slogan">La sécurité sans limites</p>
+      <div class="header-buttons">
+        <button onclick="nav('manage')" class="btn-outline">Gérer produit</button>
+        <button onclick="nav('sell')" class="btn-outline">Vente</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- Home / Dashboard -->
+    <section id="page-home" class="page active">
+      <div class="card dashboard">
+        <h2>Tableau de bord</h2>
+        <div class="stat"><span id="stat-products">0</span><div>PRODUITS</div></div>
+        <div class="stat"><span id="stat-stock">0</span><div>STOCK TOTAL</div></div>
+        <div class="stat"><span id="stat-value">0 FCFA</span><div>VALEUR EN FCFA</div></div>
+      </div>
+      <div class="actions">
+        <button class="btn-primary full" onclick="nav('manage')">GÉRER PRODUIT</button>
+        <button class="btn-primary full" onclick="nav('sell')">VENTE</button>
+        <button class="btn-primary full" onclick="nav('history')">HISTORIQUE</button>
+      </div>
+    </section>
+
+    <!-- Manage Products -->
+    <section id="page-manage" class="page">
+      <div class="card">
+        <h2>Ajouter un produit</h2>
+        <form id="form-product" onsubmit="event.preventDefault(); saveProduct();">
+          <input type="text" id="p-name" placeholder="Nom du produit" required>
+          <textarea id="p-desc" placeholder="Description produit (optionnel)"></textarea>
+          <input type="number" id="p-buy" placeholder="Prix d'achat (FCFA)" min="0">
+          <input type="number" id="p-sale" placeholder="Prix de vente (FCFA)" min="0" required>
+          <input type="number" id="p-qty" placeholder="Quantité" min="0" required>
+          <div class="file-row">
+            <input type="file" id="p-image" accept="image/*">
+            <span id="p-image-name">Aucun fichier choisi</span>
+          </div>
+          <button class="btn-primary full" type="submit">💾 Enregistrer</button>
+          <button class="btn-danger full" type="button" onclick="deleteAllProducts()">🗑️ Supprimer tous les produits</button>
+          <button class="btn-outline full" type="button" onclick="nav('home')">— Accueil</button>
+        </form>
+      </div>
+
+      <div class="card list-card">
+        <h3>Liste des produits</h3>
+        <div id="products-list">Aucun produit enregistré</div>
+      </div>
+    </section>
+
+    <!-- Sell / Invoice -->
+    <section id="page-sell" class="page">
+      <div class="card">
+        <h2>Vente / Facturation</h2>
+        <select id="sell-product"><option value="">Aucun produit</option></select>
+        <input type="number" id="sell-qty" placeholder="Quantité" min="1">
+        <input type="text" id="sell-city" placeholder="Ville du client (optionnel)">
+        <input type="text" id="sell-name" placeholder="Nom du client (optionnel)">
+        <input type="tel" id="sell-phone" placeholder="Numéro du client (optionnel)">
+        <button class="btn-primary full" onclick="saveSale()">Enregistrer & Facturer</button>
+        <button class="btn-outline full" onclick="nav('home')">— Accueil</button>
+      </div>
+    </section>
+
+    <!-- History -->
+    <section id="page-history" class="page">
+      <div class="card">
+        <h2>Historique des ventes</h2>
+        <button class="btn-primary full" onclick="nav('home')">ACCUEIL</button>
+        <button class="btn-danger full" onclick="deleteAllSales()">EFFACER TOUT</button>
+        <button class="btn-green full" onclick="exportSalesPdf()">EXPORTER EN PDF</button>
+      </div>
+      <div class="card list-card">
+        <div id="sales-list">Aucune vente enregistrée</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">GESTION DE VENTE - La sécurité sans limites</footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
