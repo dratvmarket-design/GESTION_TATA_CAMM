@@ -1,0 +1,37 @@
+*{box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+:root{--orange:#ff8a00;--dark:#1f1f1f;--panel:#ffffffcc}
+body{margin:0;background:linear-gradient(180deg,var(--dark) 60%, #111 100%);min-height:100vh;color:#111}
+header{background:var(--orange);padding:10px 12px;color:#fff;position:sticky;top:0}
+.logo-line{display:flex;flex-direction:column;align-items:flex-start;padding:6px 0}
+.title{font-weight:800;font-size:18px}
+.subtitle{font-size:12px;color:#f7ffd6;margin-top:2px}
+nav{display:flex;gap:8px;margin-top:8px}
+.nav-btn{background:#fff2;border:0;padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:700}
+.nav-btn.active{background:#fff;color:var(--orange)}
+main{padding:14px;max-width:720px;margin:0 auto}
+.page{display:none}
+.page.active{display:block}
+.card{background:var(--panel);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.4);margin-bottom:16px}
+.card.large{min-height:260px}
+h2{margin:0 0 12px 0;color:var(--dark)}
+.stats{font-size:16px;margin-bottom:12px}
+.actions{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.primary{background:var(--orange);border:0;color:#fff;padding:10px;border-radius:8px;cursor:pointer;font-weight:700}
+.secondary{background:#fff;border:0;color:var(--orange);padding:8px;border-radius:8px;cursor:pointer}
+.danger{background:#e53935;border:0;color:#fff;padding:10px;border-radius:8px;cursor:pointer}
+.export{background:#0f8a83;border:0;color:#fff;padding:10px;border-radius:8px;cursor:pointer}
+label{display:block;margin-bottom:8px;font-size:14px}
+input[type="text"], input[type="number"], input[type="tel"], textarea, select{width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;margin-top:6px}
+textarea{min-height:60px}
+.list-card{margin-top:12px;background:#fff0;padding:8px;border-radius:8px}
+.product-row{display:flex;gap:8px;align-items:center;padding:8px;border-radius:8px;border:1px solid #eee;margin-bottom:8px}
+.product-row img{width:56px;height:56px;object-fit:cover;border-radius:6px;border:1px solid #ddd}
+.product-meta{flex:1}
+.product-actions{display:flex;gap:6px}
+footer{color:#fff;text-align:center;padding:10px 0;font-size:12px;opacity:0.9}
+
+.chart-card{margin-top:12px;background:#fff0;padding:10px;border-radius:8px}
+.chart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-weight:700}
+
+/* responsive */
+@media(min-width:720px){main{padding:24px}}
